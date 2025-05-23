@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario TIC Interactivo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Inventario de Insumos TIC</h1>
+        <nav>
+            <ul>
+                <li><a href="#inventario">Ver Inventario</a></li>
+                <li><a href="#solicitar">Solicitar Insumo</a></li>
+                <li><a href="#reportar">Reportar Problema</a></li>
+                <li><a href="#mis-solicitudes">Mis Solicitudes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inventario" class="active">
+            <h2>Insumos Disponibles</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Buscar insumo...">
+                <button id="search-button">Buscar</button>
+            </div>
+            <div id="item-list" class="grid-container">
+                </div>
+        </section>
+
+        <section id="solicitar">
+            <h2>Solicitar Nuevo Insumo</h2>
+            <form id="request-form">
+                <label for="insumo-select">Tipo de Insumo:</label>
+                <select id="insumo-select" required>
+                    <option value="">Selecciona un insumo</option>
+                    <option value="monitor">Monitor</option>
+                    <option value="teclado">Teclado</option>
+                    <option value="raton">Ratón</option>
+                    <option value="toner">Tóner de Impresora</option>
+                    <option value="cable-hdmi">Cable HDMI</option>
+                    </select>
+
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" min="1" value="1" required>
+
+                <label for="justificacion">Justificación:</label>
+                <textarea id="justificacion" rows="4" placeholder="Describe brevemente por qué necesitas este insumo." required></textarea>
+
+                <button type="submit">Enviar Solicitud</button>
+                <p id="request-message" class="hidden"></p>
+            </form>
+        </section>
+
+        <section id="reportar">
+            <h2>Reportar un Problema</h2>
+            <form id="report-form">
+                <label for="equipo-problema">Equipo con Problema:</label>
+                <input type="text" id="equipo-problema" placeholder="Ej: Laptop de Juan Pérez, Impresora HP 205" required>
+
+                <label for="descripcion-problema">Descripción del Problema:</label>
+                <textarea id="descripcion-problema" rows="6" placeholder="Describe detalladamente el problema (no enciende, falla el teclado, no imprime, etc.)." required></textarea>
+
+                <button type="submit">Enviar Reporte</button>
+                <p id="report-message" class="hidden"></p>
+            </form>
+        </section>
+
+        <section id="mis-solicitudes">
+            <h2>Mis Solicitudes y Reportes</h2>
+            <div id="user-requests-list">
+                <p>No tienes solicitudes o reportes activos.</p>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Equipo de TIC. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
